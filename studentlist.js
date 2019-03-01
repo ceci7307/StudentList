@@ -8,12 +8,13 @@ let currentFilter;
 let sortFilter;
 let allStudents = [];
 let liste = [];
+let houseColor;
 
 const Stud = {
   fullname: "-fullname-",
   firstname: "-firstname-",
   lastname: "-lastname-",
-  imagename: "-imagename-",
+  picname: "-billede-",
   house: "-student house-",
   setJSONdata(studentData) {
     this.fullname = studentData.fullname;
@@ -23,7 +24,7 @@ const Stud = {
     this.house = studentData.house;
     const lastNameLower = parts[parts.length - 1].toLowerCase();
     const firstLetterLower = parts[0].substring(0, 1).toLowerCase();
-    this.imagename = `images/${lastNameLower}_${firstLetterLower}.png`;
+    this.picname = `images/${lastNameLower}_${firstLetterLower}.png`;
   }
 };
 
@@ -48,7 +49,7 @@ function init() {
     .querySelector("#sortByFirstname")
     .addEventListener("click", sortFname);
   document.querySelector("#sortByLast").addEventListener("click", sortLname);
-  document.querySelector("#sortByHouse").addEventListener("click", sortHname);
+  //document.querySelector("#sortByHouse").addEventListener("click", sortHname);
 
   getJSON();
 }
@@ -162,9 +163,9 @@ function sortList() {
   if (sortFilter === "lastname") {
     sorted = allStudents.sort(lastnameSort);
   }
-  if (sortFilter === "house") {
-    sorted = allStudents.sort(houseSort);
-  }
+  //if (sortFilter === "house") {
+  //sorted = allStudents.sort(houseSort);
+  //}
   //displayList(sorted);
   filterList();
 }
@@ -183,13 +184,13 @@ function lastnameSort(a, b) {
     return 1;
   }
 }
-function houseSort(a, b) {
-  if (a.house < b.house) {
-    return -1;
-  } else {
-    return 1;
-  }
-}
+//function houseSort(a, b) {
+// if (a.house < b.house) {
+//  return -1;
+//} else {
+//  return 1;
+//}
+//}
 
 function displayList(liste) {
   console.log("displayList");
@@ -214,10 +215,16 @@ function visModal(personen) {
   modal.classList.add("vis");
   modal.querySelector(".modal-navn").textContent = personen.fullname;
   modal.querySelector(".modal-house").textContent = personen.house;
+  houseColor = personen.house.toLowerCase();
+  document.querySelector("#modal-content").classList.add(houseColor);
+
+  modal.querySelector(".modal-picture").src = personen.picname;
+  modal.querySelector(".modal-picture").alt = `Picture of ${personen.fullname}`;
 
   modal.querySelector(".luk").addEventListener("click", skjulModal);
 }
 function skjulModal() {
   modal.classList.remove("vis");
+  document.querySelector("#modal-content").classList.remove(houseColor);
   filterList();
 }
