@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student List 2</title>
-    <link rel="stylesheet" href="studentlist.css" type="text/css">
-</head>
-<body>
-  <h1>Students 1991</h1>
-    
-  <script src="studentlist.js"></script>
-</body>
+    <link rel="stylesheet" href="studentlist.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Students 1991</h1>
+
+    <button id="filter-Hufflepuff">Hufflepuff</button>
+    <button id="filter-Gryffindor">Gryffindor</button>
+    <button id="filter-Ravenclaw">Ravenclaw</button>
+    <button id="filter-Slytherin">Slytherin</button>
+
+    <button id="sortByFirstname">Firstname</button>
+    <button id="sortByLast">Lastname</button>
+    <button id="sortByHouse">House</button>
+
+    <!--TEMPLATE-->
+    <main class="container">
+      <section class="data-container"></section>
+    </main>
+
+    <template id="list-template">
+      <article class="list-article">
+        <h1 class="data-navn"></h1>
+        <p class="data-house"></p>
+        <img class="data-billede" src="" alt="" />
+      </article>
+    </template>
+
+    <!-- MENU MODAL -->
+    <section id="modal">
+      <button class="luk">X</button>
+      <div id="modal-content">
+        <h1 class="modal-navn"></h1>
+        <p class="modal-house"></p>
+      </div>
+    </section>
+
+    <script src="studentlist.js"></script>
+  </body>
 </html>

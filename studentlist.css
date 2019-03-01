@@ -1,23 +1,56 @@
 body {
-    background-color: aliceblue;
+  background-color: white;
+}
+
+.data-navn {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .gryffindor {
-    background-color: #ce3a0a;
-    color: #fdb02e
+  background-color: #ce3a0a;
+  color: #fdb02e;
 }
 
 .hufflepuf {
-    background-color: #ffc02a;
-    color: #0b0000  
+  background-color: #ffc02a;
+  color: #0b0000;
 }
 
 .ravenclaw {
-    background-color: #395f9d;
-    color: #e9ba36  
+  background-color: #395f9d;
+  color: #e9ba36;
 }
 
 .slytherin {
-    background-color: #588c39;
-    color: #c0b1c6  
+  background-color: #588c39;
+  color: #c0b1c6;
+}
+
+#modal {
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  /*display: none;*/
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+}
+
+#modal.vis {
+  /*display: block;*/
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s;
+}
+
+#modal-content {
+  width: 87vw;
+  height: 100vh;
+  background-color: rgba(250, 250, 250, 1);
+  margin: auto;
+  overflow: scroll;
 }
