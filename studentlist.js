@@ -43,7 +43,7 @@ function init() {
     .querySelector("#filter-Slytherin")
     .addEventListener("click", filterSlytherin);
 
-  document.querySelector("body > h1").addEventListener("click", backToAll);
+  document.querySelector("#all").addEventListener("click", backToAll);
 
   document
     .querySelector("#sortByFirstname")
@@ -51,6 +51,12 @@ function init() {
   document.querySelector("#sortByLast").addEventListener("click", sortLname);
   //document.querySelector("#sortByHouse").addEventListener("click", sortHname);
 
+  document
+    .querySelector(".filter-knap")
+    .addEventListener("click", dropdownFunc);
+  document
+    .querySelector(".sorter-knap")
+    .addEventListener("click", dropdownFunc2);
   getJSON();
 }
 
@@ -228,3 +234,38 @@ function skjulModal() {
   document.querySelector("#modal-content").classList.remove(houseColor);
   filterList();
 }
+
+function dropdownFunc() {
+  document.querySelector(".filterKnapper").classList.toggle("showButton");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".filter-knap")) {
+    let dropdowns = document.querySelector(".filterKnapper");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("showButton")) {
+        openDropdown.classList.remove("showButton");
+      }
+    }
+  }
+};
+
+function dropdownFunc2() {
+  document.querySelector(".sortKnapper").classList.toggle("showButton");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches(".sorter-knap")) {
+    let dropdowns = document.querySelector(".sortKnapper");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("showButton")) {
+        openDropdown.classList.remove("showButton");
+      }
+    }
+  }
+};

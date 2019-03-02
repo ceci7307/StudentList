@@ -3,21 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student List 2</title>
+    <title>The Hogwarts Student List of 1991</title>
     <link rel="stylesheet" href="studentlist.css" type="text/css" />
   </head>
   <body>
-    <h1>Students 1991</h1>
+    <img id="logo" src="/images/hogwarts-logo.png" alt="Hogwarts logo" />
+    <h1 id="hogwarts">Hogwarts</h1>
+    <h2>Students of 1991</h2>
 
-    <button id="filter-Hufflepuff">Hufflepuff</button>
-    <button id="filter-Gryffindor">Gryffindor</button>
-    <button id="filter-Ravenclaw">Ravenclaw</button>
-    <button id="filter-Slytherin">Slytherin</button>
-
-    <button id="sortByFirstname">Firstname</button>
-    <button id="sortByLast">Lastname</button>
-    <button id="sortByHouse">House</button>
-
+    <div class="dropdown-filter">
+      <button class="filter-knap">Filtrering</button>
+      <div class="filterKnapper">
+        <button id="all">Show all students</button>
+        <button id="filter-Hufflepuff">Hufflepuff</button>
+        <button id="filter-Gryffindor">Gryffindor</button>
+        <button id="filter-Ravenclaw">Ravenclaw</button>
+        <button id="filter-Slytherin">Slytherin</button>
+      </div>
+    </div>
+    <div class="dropdown-sort">
+      <button class="sorter-knap">Sortér</button>
+      <div class="sortKnapper">
+        <button id="sortByFirstname">Firstname</button>
+        <button id="sortByLast">Lastname</button>
+      </div>
+    </div>
     <!--TEMPLATE-->
     <main class="container">
       <section class="data-container"></section>
@@ -25,7 +35,7 @@
 
     <template id="list-template">
       <article class="list-article">
-        <h1 class="data-navn"></h1>
+        <h3 class="data-navn"></h3>
         <p class="data-house"></p>
         <img class="data-billede" src="" alt="" />
       </article>
