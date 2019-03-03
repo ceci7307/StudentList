@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: white;
-  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
 }
 
 #logo {
@@ -22,7 +22,7 @@ h2 {
 }
 
 .filter-knap {
-  background-color: #3498db;
+  background-color: #3584A7;
   color: white;
   padding: 10px;
   font-size: 12px;
@@ -44,7 +44,7 @@ h2 {
 .filterKnapper {
   display: none;
   position: absolute;
-  background-color: #3498db;
+  background-color: #3584A7;
   max-width: 160px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -53,7 +53,7 @@ h2 {
 }
 
 .sorter-knap {
-  background-color: #3498db;
+  background-color: #3584A7;
   color: white;
   padding: 10px;
   font-size: 12px;
@@ -74,7 +74,7 @@ h2 {
 .sortKnapper {
   display: none;
   position: absolute;
-  background-color: #3498db;
+  background-color: #3584A7;
   max-width: 160px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -89,7 +89,7 @@ h2 {
 button {
   border-radius: 0%;
   border: solid 1px #2980b9;
-  background-color: #3498db;
+  background-color: #3584A7;
   width: 100%;
   color: white;
 }
@@ -103,7 +103,7 @@ button:hover {
 .luk {
   border-radius: 0%;
   border: solid 1px #2980b9;
-  background-color: #3498db;
+  background-color: #3584A7;
   width: 30px;
   height: 30px;
   color: white;
